@@ -6,35 +6,15 @@
 class ComputerClub {
     
     private:
+
         int count_table;
         int price_hour;
-        
-        //int number_table;
         tm time_open {};
         tm time_close {};
         vector <string> client_in_club;
         vector <Client> client_at_table;
         vector <Client> waiting_clients;
         vector <Billing> billing_vector;
-        //map <int, string> table_client;
-        //tm time_event {};
-        
-
-        int countElementsInLine(const std::string& line) {
-            std::istringstream iss(line);
-            int count = 0;
-
-            while (iss) {
-                std::string element;
-                iss >> element;
-                if (!element.empty()) {
-                    count++;
-                }
-            }
-            return count;
-        }
-
-
 
 
     public:
