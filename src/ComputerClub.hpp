@@ -125,8 +125,7 @@ class ComputerClub {
             for (string& el : client_in_club) {
                 
                 if (name.data() == el){
-                    //cout << name.data() << endl;
-                    //cout << el.data() << endl;
+
                     exists = true;
                     break;
                 }
@@ -160,7 +159,6 @@ class ComputerClub {
             int flag = 1;
 
             for (const string& el : client_in_club) {
-                //cout << " v: "<< el << endl;
                 if (el == name.data()) {
                     flag = 0;
                     break;
@@ -320,7 +318,7 @@ class ComputerClub {
 
         void print_queue(){
             for(Client cl : waiting_clients){
-                cout <<"ff : "<< cl.get_name()<< " ";
+                cout <<"queue : "<< cl.get_name()<< " ";
 
             }
             cout << endl;
@@ -523,10 +521,6 @@ class ComputerClub {
                 
                 sit_client_table(new_client);
 
-                //for (Client obj : client_at_table){
-                  //  obj.print_client();
-                //}
-                //table_client[number_table] = name; 
             }
 
 
