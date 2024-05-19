@@ -270,7 +270,7 @@ class ComputerClub {
             }
             for (const auto& pair : dif_time) {
                 sum_map[pair.first] += pair.second;
-                cout << pair.first << " " << sum_map[pair.first] * price_hour << " " << sum_map[pair.first]  << endl;
+                cout << pair.first << " " << sum_map[pair.first] * price_hour << " " << (sum_map[pair.first] < 10 ? "0" : "") << sum_map[pair.first] << ":" << "00" << endl;
             }
 
             
