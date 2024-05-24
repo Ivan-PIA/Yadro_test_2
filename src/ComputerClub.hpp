@@ -290,7 +290,7 @@ class ComputerClub {
                 Billing input(new_client.get_table(),new_client.get_time(), true);
                 billing_vector.push_back(input);
 
-                //client_in_club.erase(remove(client_in_club.begin(), client_in_club.end(), new_client.get_name()), client_in_club.end());
+                client_in_club.erase(remove(client_in_club.begin(), client_in_club.end(), new_client.get_name()), client_in_club.end());
 
             }
             
@@ -323,6 +323,7 @@ class ComputerClub {
                     print_time(time);
                     cout << " 12 " << client.get_name() << " " << client.get_table() << endl;
                     client_in_club.push_back(client.get_name());
+                    client_at_table.push_back(client);
                     //print_time(time);
                     //cout << endl;
 
@@ -389,14 +390,7 @@ class ComputerClub {
 
         void close_club(){
             
-            // if (client_in_club.size() > 0){
-            //     auto iter2 = client_in_club.cbegin();
-            //     for (int i = 0; i < client_in_club.size(); i++){
-            //         print_time(time_close);
-            //         cout << " 11 " << client_in_club[i] << endl;
-            //         client_in_club.erase(iter2+i);
-            //     }
-            // }
+
 
             if (client_in_club.size() > 0){
                 for (string &cl : client_in_club){
@@ -407,11 +401,12 @@ class ComputerClub {
                 } 
             }
 
+
             if (client_at_table.size() > 0){
                 auto iter = client_at_table.cbegin();
-                for (int i = 0; i < client_at_table.size()+1; i ++){
-                    //print_time(time_close);
-                    //cout << " 11 " << client_at_table[i].get_name().data() << endl;
+                for (int i = 0; i < client_at_table.size(); i ++){
+                    print_time(time_close);
+                    cout << " 11 " << client_at_table[i].get_name().data() << endl;
 
                     Billing output(client_at_table[i].get_table(),time_close, false);
                     billing_vector.push_back(output);
@@ -422,6 +417,7 @@ class ComputerClub {
 
             //check free vector
             if(0){
+                
                 cout << "Debag : " << endl;
                 cout << "client in club : " << endl;
                 print_client_in_club();
